@@ -11,6 +11,11 @@ function addNumber() {
         alert('Vui lòng nhập một số hợp lệ.');
     }
 }
+function resetNumber(){
+    array = [];
+    document.getElementById('arrayDisplay').textContent = '';
+    document.getElementById('numberInput').value = '';
+}
 
 function sumPositiveNumbers() {
     const sum = array.reduce((acc, num) => num > 0 ? acc + num : acc, 0);
