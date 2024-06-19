@@ -68,5 +68,10 @@ function swapValues() {
     array[pos2] = temp;
 
     result.textContent = 'Mảng sau khi đổi chỗ: ' + array.join(', ');
-    document.getElementById('arrayDisplay').textContent = 'Mảng đã nhập: ' + array.join(', ');
+    
+}
+//bai 7
+function sortArray() {
+    array.sort((a, b) => a - b);
+    document.getElementById('result-bai7').textContent = 'Mảng sau khi sắp xếp tăng dần: ' + array.join(', ');
 }
