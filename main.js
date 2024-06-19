@@ -75,3 +75,48 @@ function sortArray() {
     array.sort((a, b) => a - b);
     document.getElementById('result-bai7').textContent = 'Mảng sau khi sắp xếp tăng dần: ' + array.join(', ');
 }
+
+//bai8
+function isPrime(num) {
+    if (num <= 1) return false;
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) return false;
+    }
+    return true;
+}
+
+function findFirstPrime() {
+    const firstPrime = array.find(isPrime);
+    document.getElementById('result-bai8').textContent = firstPrime !== undefined ? 'Số nguyên tố đầu tiên: ' + firstPrime : 'Không có số nguyên tố trong mảng.';
+}
+
+let realNumbersArray = [];
+// Bài Tập 9: 
+function addRealNumber() {
+    const input = document.getElementById('realNumberInput').value;
+    const number = Number(input);
+    if (!isNaN(number)) {
+        realNumbersArray.push(number);
+        document.getElementById('realArrayDisplay').textContent = 'Mảng số thực đã nhập: ' + realNumbersArray.join(', ');
+        document.getElementById('realNumberInput').value = '';
+    } else {
+        alert('Vui lòng nhập một số hợp lệ.');
+    }
+}
+function countIntegers() {
+    const integersCount = realNumbersArray.filter(num => Number.isInteger(num)).length;
+    document.getElementById('result-bai9').textContent = 'Số lượng số nguyên trong mảng số thực: ' + integersCount;
+}
+//bai10
+function comparePositiveNegative() {
+    const positiveCount = array.filter(num => num > 0).length;
+    const negativeCount = array.filter(num => num < 0).length;
+
+    if (positiveCount > negativeCount) {
+        document.getElementById('result-bai10').textContent = 'Số dương > số âm.';
+    } else if (positiveCount < negativeCount) {
+        document.getElementById('result-bai10').textContent = 'Số âm > số dương.';
+    } else {
+        document.getElementById('result-bai10').textContent = 'Số dương = số âm.';
+    }
+}
