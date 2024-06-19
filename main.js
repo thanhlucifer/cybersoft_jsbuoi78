@@ -50,3 +50,23 @@ function findLastEvenNumber() {
     const lastEven = array.slice().reverse().find(num => num % 2 === 0);
     document.getElementById('result-bai5').textContent = lastEven !== undefined ? 'Số chẵn cuối cùng: ' + lastEven : 'Không có số chẵn trong mảng.';
 }
+
+// Bài Tập 6:
+function swapValues() {
+    const pos1 = parseInt(document.getElementById('position1').value);
+    const pos2 = parseInt(document.getElementById('position2').value);
+    const result = document.getElementById('result-bai6');
+
+    if (isNaN(pos1) || isNaN(pos2) || pos1 < 0 || pos2 < 0 || pos1 >= array.length || pos2 >= array.length) {
+        result.textContent = 'Vui lòng nhập vị trí hợp lệ trong mảng.';
+        return;
+    }
+
+    // Swap the values
+    let temp = array[pos1];
+    array[pos1] = array[pos2];
+    array[pos2] = temp;
+
+    result.textContent = 'Mảng sau khi đổi chỗ: ' + array.join(', ');
+    document.getElementById('arrayDisplay').textContent = 'Mảng đã nhập: ' + array.join(', ');
+}
